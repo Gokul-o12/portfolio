@@ -1,0 +1,82 @@
+
+
+/* :root {
+    --bg-color: #C1B198; 
+    --second-bg-color: #BED9E0; 
+    --text-color: #484441;
+    --main-color: #262221; 
+} */
+   
+/* :root {
+    --backone:#000B58;
+    
+    --backtwo:#FFFFFF;
+    --onetext:#FCFAEE;
+    --twotext:#FFFFFF;
+    --threetext:#CDC2A5;
+} */
+
+:root {
+    /* --backone:#FFFFFF; */
+    --backone:#D8D8D8;
+    --backtwo:#F0F0F0;
+    --onetext:#FCFAEE;
+    --twotext:#FFFFFF;
+    /* --threetext:#CDC2A5; */
+    --threetext:#cfbf97;
+}
+/* --backone:#B0B0B0; */
+
+/* :root {
+    --backone:#F0F0F0;
+    
+    --backtwo:#B0B0B0;
+    --onetext:#FCFAEE;
+    --twotext:#FFFFFF;
+    --threetext:#CDC2A5;
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: "Kodchasan", sans-serif;
+    
+}
+
+html {
+    font-size: 62.5%;  
+    overflow-x: hidden;
+}
+    
+body{
+    background-color:var(--bg-color);
+    color:var(--text-color);
+    padding-top: 70px; /* Equal to header height */
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+    
+span {
+    color: var(--main-color);
+}
+
+
+
+
+
+
+
+
+
+
+/* #about, #hero {
+  margin-bottom: 0 !important;
+} */

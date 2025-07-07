@@ -1,0 +1,184 @@
+/* .about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: var(--second-bg-color);
+}
+
+.about-content {
+  max-width: 900px;
+  text-align: left;
+  color: var(--text-color);
+}
+
+.about-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.heading {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.heading span {
+  color: var(--main-color);
+}
+
+.about-title hr {
+  width: 60px;
+  height: 4px;
+  background: var(--main-color);
+  border: none;
+  margin: 1rem auto;
+}
+
+.about-content p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+
+
+@media (max-width: 1024px) {
+  .heading {
+    font-size: 3rem;
+  }
+
+  .about-content p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 3rem 1.5rem;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+  }
+
+  .about-content p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 2rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+  }
+
+  .about-title hr {
+    width: 40px;
+  }
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* About.css */
+
+.about-section {
+  /* background-color: #fef6f2; */
+  /* background-color:var(--second-bg-color); */
+  background-color:var(--backtwo);
+  
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: 'Playfair Display', serif;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+
+}
+
+.about-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.about-left {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  color: #3b3b3b;
+  font-size: 14px;
+  line-height: 1.8;
+  font-family: 'Poppins', sans-serif;
+  margin-left: 40px !important;
+}
+
+.about-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-right h1 {
+  font-size: 8vw;
+  line-height: 1;
+  font-weight: 500;
+  color: #111;
+  text-align: right;
+  font-family: 'Playfair Display', serif;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-left,
+  .about-right {
+    padding: 1rem;
+    justify-content: center;
+    margin-left: 0px !important;
+  }
+
+  .about-right h1 {
+    font-size: 12vw;
+    text-align: center;
+  }
+
+  .about-right{
+    order: 1;
+  }
+
+  .about-left {
+    order: 2;
+    /* margin-top: 2rem; */
+  }
+}

@@ -1,0 +1,140 @@
+.certification-section {
+  /* padding: 60px 20px; */
+  padding: 10rem 2rem;
+  /* background-color: var(--second-bg-color); */
+  background-color:var(--backtwo);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  
+  .certification-section{
+    padding: 5rem 2rem;
+  }
+  
+}
+.certification-heading {
+  /* font-size: 2.75rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: #262221;
+  color: var(--main-color); */
+
+
+  /* text-align: center;
+  font-size: 3rem;
+  color: var(--main-color);
+  margin-bottom: 3rem; */
+
+
+  margin-bottom: 3rem;
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--main-color);
+  font-weight: bold;
+}
+/* text-align: center;
+  font-size: 2.75rem;
+  font-weight: 800;
+  margin-bottom: 4rem;
+  color: var(--main-color);
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); */
+
+
+.certification-card {
+  display: flex;
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  max-width: 1000px;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  padding: 30px;
+  gap: 30px;
+  min-height: 450px;
+}
+
+.cert-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cert-image {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.cert-content {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* padding: 10px 0; */
+  padding-top: 10px;
+  position: relative;
+}
+
+.cert-quote {
+  font-size: 20px;
+  color: #484441;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.cert-author {
+  font-weight: bold;
+  color: #262221;
+}
+
+.cert-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+.cert-btn {
+  width: 50px;
+  height: 50px;
+  background: var(--backone);
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  color: black;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cert-btn:hover {
+  background: var(--backtwo);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .certification-card {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .cert-image {
+    max-width: 80%;
+  }
+
+  .cert-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .cert-buttons {
+    justify-content: center;
+  }
+}
