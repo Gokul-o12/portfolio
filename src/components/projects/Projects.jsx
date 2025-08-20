@@ -1,135 +1,87 @@
-
+import React from 'react';
 import './Projects.css';
-
-// import stockImg from '../../assets/images/Stock image_1.png';
-// import nextGenImg from '../../assets/images/NextGen image.png';
-// import teaLeafImg from '../../assets/images/project_NM.jpg';
-
 import papexImg from '../../assets/images/papex.png';
 import atom2Img from '../../assets/images/atom2.png';
 
 export default function Projects() {
   const projects = [
     {
-  title: "Papex – AI-Powered Document Intelligence Platform",
-  description: `Designed and developed a platform that extracts structured data from documents using OCR and AI. Built a dynamic prompt system to convert raw text into JSON format. Delivered a complete solution with interactive dashboards and rule-based status tracking.`,
-  techStack: [
-    "Spring Boot",
-    "React",
-    "PostgreSQL",
-    
-    
-  ],
-  // company: "Sholas Technologies",
-  image: papexImg,
-  repo: "https://github.com/Gokul-o12/Stock-Price-Prediction-using-Machine-Learning-"
-},
-
+      title: "Papex – AI-Powered Document Intelligence Platform",
+      description: "Designed and developed a platform that extracts structured data from documents using OCR and AI. Built a dynamic prompt system to convert raw text into JSON format. Delivered a complete solution with interactive dashboards and rule-based status tracking.",
+      techStack: ["Spring Boot", "React", "PostgreSQL", "AI/ML", "OCR"],
+      image: papexImg,
+      github: "https://github.com/Gokul-o12",
+      live: "#"
+    },
     {
-  title: "ATOM2 – Business Website",
-  description: `Developed a responsive multi-page business website with smooth navigation, scroll-based animations, and interactive UI components, optimized for performance and cross-device compatibility.`,
-  techStack: [
-    "Bootstrap",
-    "JavaScript",
-    "HTML/CSS",
-    
-    
-  ],
-  // company: "Sholas Technologies",
-  image: atom2Img,
-  repo: "https://github.com/Gokul-o12/Stock-Price-Prediction-using-Machine-Learning-"
-},
-//     {
-//       title: "STOCK PRICE PREDICTION USING MACHINE LEARNING",
-//       description: `Stock market prediction is the act of trying to determine the future value of a company stock or other financial instrument traded on an exchange.
-// The successful prediction of a stock's future price could yield significant profit.
-
-// Tech Stack: HTML, CSS, JavaScript, Python Flask & MySQL`,
-//       image: stockImg,
-//       repo: "https://github.com/Gokul-o12/Stock-Price-Prediction-using-Machine-Learning-"
-//     },
-//     {
-//       title: "NEXTGEN E-COMMERCE REVOLUTION",
-//       description: `Web application empowers farmers by allowing them to set their own prices and sell directly to consumers, bypassing intermediaries. Despite challenges like logistics, the platform addresses
-// them to enable efficient direct-to-consumer sales, there by improving farmers' profitability and livelihood.
-
-// Tech Stack: HTML, CSS, JavaScript & Python Flask`,
-//       image: nextGenImg,
-//       repo: "https://github.com/Gokul-o12/Next-Gen-E-Commerce-Revolution"
-//     },
-//     {
-//       title: "DISEASES IN TEA LEAVES",
-//       description: `Developed a tea leaf disease detection model using TensorFlow/Keras with 97.3% accuracy. 
-// Implemented the model using Flask for practical use. 
-// Enables early detection of diseases in tea leaves for effective monitoring.
-
-// Tech Stack: HTML, CSS, JavaScript & Python Flask`,
-//       image: teaLeafImg,
-//       repo: "https://github.com/users/Gokul-o12/projects/1"
-//     },
-
-
-
-
-//     {
-//       title: "DISEASES IN TEA LEAVES",
-//       description: `Developed a tea leaf disease detection model using TensorFlow/Keras with 97.3% accuracy. 
-// Implemented the model using Flask for practical use. 
-// Enables early detection of diseases in tea leaves for effective monitoring.
-
-// Tech Stack: HTML, CSS, JavaScript & Python Flask`,
-//       image: teaLeafImg,
-//       repo: "https://github.com/users/Gokul-o12/projects/1"
-//     }
+      title: "ATOM2 – Business Website",
+      description: "Developed a responsive multi-page business website with smooth navigation, scroll-based animations, and interactive UI components, optimized for performance and cross-device compatibility.",
+      techStack: ["Bootstrap", "JavaScript", "HTML/CSS", "Responsive Design"],
+      image: atom2Img,
+      github: "https://github.com/Gokul-o12",
+      live: "#"
+    }
   ];
 
   return (
-    <section id="projects" className="project">
-  <h2 className="heading" data-aos="fade-up"><span>Projects</span></h2>
+    <section className="projects" id="projects">
+      <div className="projects-container">
+        <div className="section-header">
+          <h2 className="section-title">Featured Projects</h2>
+          <p className="section-subtitle">
+            A showcase of my recent work and the technologies I've used to bring ideas to life
+          </p>
+        </div>
 
-  <div className="portfolio-container">
-    {projects.map((proj, index) => (
-      <div
-        className={`project-card ${index % 2 !== 0 ? 'reverse' : ''}`}
-        key={index}
-        data-aos="fade-up"
-        data-aos-delay={index * 100} // Stagger animation
-      >
-        <img src={proj.image} alt={proj.title} />
-        <div>
-          <h4><span>{proj.title}</span></h4>
-          <p>{proj.description}</p>
-
-          {proj.company && (
-            <p><strong>Company:</strong> {proj.company}</p>
-          )}
-
-          {proj.techStack && (
-            <p className='forbot'><strong>Tech Stack:</strong> {proj.techStack.join(', ')}</p>
-          )}
-
-          {/* <div className="btn-group newb">
-            <a href={proj.repo} target="_blank" rel="noopener noreferrer">
-              <div className="btn">GitHub Repo</div>
-            </a>
-          </div> */}
+        <div className="projects-grid">
+          {projects.map((project, index) => (
+            <div key={index} className="project-card">
+              <img 
+                src={project.image} 
+                alt={project.title}
+                className="project-image"
+              />
+              
+              <div className="project-content">
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-description">{project.description}</p>
+                
+                <div className="tech-stack">
+                  <span className="tech-stack-label">Technologies Used:</span>
+                  <div className="tech-tags">
+                    {project.techStack.map((tech, techIndex) => (
+                      <span key={techIndex} className="tech-tag">{tech}</span>
+                    ))}
+                  </div>
+                </div>
+                
+                <div className="project-links">
+                  <a 
+                    href={project.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="project-link"
+                  >
+                    <i className="fa-brands fa-github"></i>
+                    View Code
+                  </a>
+                  {project.live !== "#" && (
+                    <a 
+                      href={project.live} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="project-link secondary"
+                    >
+                      <i className="fa-solid fa-external-link"></i>
+                      Live Demo
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    ))}
-  </div>
-</section>
-
+    </section>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-

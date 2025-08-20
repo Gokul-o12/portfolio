@@ -1,35 +1,37 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from './components/header/Header';
 import Home from './components/home/Home';
-import './App.css';
 import About from './components/about/About';
-import Skills from './components/skills/Skills';
-import Projects from './components/projects/Projects';
-import Contact from './components/contact/Contact';
-import Education from './components/education/Education';
-import Certification from './components/certification/Certification';
-import Sample from './components/education/sample';
 import Experience from './components/experience/Experience';
-
-
+import Projects from './components/projects/Projects';
+import Skills from './components/skills/Skills';
+import Certification from './components/certification/Certification';
+import Contact from './components/contact/Contact';
+import './App.css';
 
 function App() {
+  useEffect(() => {
+    // Add smooth scrolling behavior
+    document.documentElement.style.scrollBehavior = 'smooth';
+    
+    // Add padding to body for fixed header
+    document.body.style.paddingTop = '80px';
+    
+    return () => {
+      document.body.style.paddingTop = '0';
+    };
+  }, []);
+
   return (
     <>
       <Header />
       <Home />
-      <About /> 
-      <Education />
-         
-      
+      <About />
+      <Experience />
       <Projects />
       <Skills />
       <Certification />
-      <Experience />  
-      
       <Contact />
-      {/* <Sample/> */}
-      
     </>
   );
 }
