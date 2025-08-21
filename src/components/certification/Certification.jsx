@@ -15,7 +15,7 @@ export default function Certification() {
     <section className="certifications" id="certifications">
       <div className="certifications-container">
         <div className="section-header">
-          <h2 className="section-title">Certifications</h2>
+          <h2 className="section-title center">Certifications</h2>
           <p className="section-subtitle">
             Professional certifications that validate my expertise and commitment to continuous learning
           </p>
@@ -23,11 +23,13 @@ export default function Certification() {
         
         <div className="certification-slider">
           <div className="certification-card">
-            <img 
-              src={image} 
-              alt="Certificate" 
-              className="certification-image"
-            />
+            <div className="certification-image-container">
+              <img 
+                src={image} 
+                alt="Certificate" 
+                className="certification-image"
+              />
+            </div>
             <p className="certification-quote">"{quote}"</p>
             
             <div className="certification-controls">

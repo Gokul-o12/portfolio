@@ -1,5 +1,5 @@
 .about {
-  background: var(--white);
+  background: var(--light-gray);
   padding: 6rem 0;
 }
 
@@ -20,25 +20,6 @@
   animation: fadeInUp 0.8s ease-out;
 }
 
-.section-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  color: var(--primary-color);
-  margin-bottom: 2rem;
-  position: relative;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 60px;
-  height: 4px;
-  background: var(--primary-color);
-  border-radius: 2px;
-}
-
 .about-text {
   font-size: 1.1rem;
   color: var(--text-secondary);
@@ -56,14 +37,15 @@
 .stat-item {
   text-align: center;
   padding: 1.5rem;
-  background: var(--light-gray);
+  background: var(--card-background);
   border-radius: 12px;
   transition: var(--transition);
+  box-shadow: var(--shadow);
 }
 
 .stat-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-lg);
 }
 
 .stat-number {
@@ -89,14 +71,22 @@
 .about-photo {
   width: 100%;
   max-width: 400px;
+  height: 400px;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-lg);
   transition: var(--transition);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .about-photo:hover {
   transform: scale(1.02);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 25px 50px rgba(59, 130, 246, 0.15);
 }
 
 @media (max-width: 768px) {
@@ -112,11 +102,6 @@
   
   .about-image {
     order: -1;
-  }
-  
-  .section-title::after {
-    left: 50%;
-    transform: translateX(-50%);
   }
   
   .about-stats {

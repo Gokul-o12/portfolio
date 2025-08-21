@@ -1,5 +1,5 @@
 .contact {
-  background: var(--light-gray);
+  background: var(--background);
   padding: 6rem 0;
 }
 
@@ -12,13 +12,6 @@
 .section-header {
   text-align: center;
   margin-bottom: 4rem;
-}
-
-.section-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
 }
 
 .section-subtitle {
@@ -36,10 +29,13 @@
 }
 
 .contact-form {
-  background: var(--white);
+  background: var(--card-background);
   padding: 3rem;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow);
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-group {
@@ -49,7 +45,7 @@
 .form-label {
   display: block;
   font-weight: 600;
-  color: var(--primary-color);
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
@@ -62,6 +58,8 @@
   font-size: 1rem;
   transition: var(--transition);
   font-family: inherit;
+  background: var(--card-background);
+  color: var(--text-primary);
 }
 
 .form-input:focus,
@@ -73,6 +71,7 @@
 .form-textarea {
   resize: vertical;
   min-height: 120px;
+  flex-grow: 1;
 }
 
 .submit-btn {
@@ -86,6 +85,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
+  margin-top: auto;
 }
 
 .submit-btn:hover {
@@ -94,15 +94,18 @@
 }
 
 .contact-info {
-  background: var(--white);
+  background: var(--card-background);
   padding: 3rem;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow);
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-info h3 {
   font-size: 1.5rem;
-  color: var(--primary-color);
+  color: var(--text-primary);
   margin-bottom: 2rem;
 }
 
@@ -126,11 +129,12 @@
   color: var(--white);
   border-radius: 50%;
   font-size: 1.2rem;
+  flex-shrink: 0;
 }
 
 .contact-details h4 {
   font-size: 1rem;
-  color: var(--primary-color);
+  color: var(--text-primary);
   margin-bottom: 0.3rem;
 }
 
@@ -142,7 +146,8 @@
 .social-links {
   display: flex;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: auto;
+  padding-top: 2rem;
 }
 
 .social-link {
@@ -177,5 +182,12 @@
   .contact-form,
   .contact-info {
     padding: 2rem 1.5rem;
+    min-height: auto;
+  }
+  
+  .social-links {
+    justify-content: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
   }
 }
