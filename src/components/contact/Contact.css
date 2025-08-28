@@ -1,6 +1,6 @@
 .contact {
   background: var(--background);
-  padding: 6rem 0;
+  padding: 5rem 0;
 }
 
 .contact-container {
@@ -24,16 +24,16 @@
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 3rem;
   align-items: start;
 }
 
 .contact-form {
   background: var(--card-background);
-  padding: 3rem;
+  padding: 2.5rem;
   border-radius: 16px;
   box-shadow: var(--shadow);
-  min-height: 600px;
+  height: 580px;
   display: flex;
   flex-direction: column;
 }
@@ -95,10 +95,10 @@
 
 .contact-info {
   background: var(--card-background);
-  padding: 3rem;
+  padding: 2.5rem;
   border-radius: 16px;
   box-shadow: var(--shadow);
-  min-height: 600px;
+  height: 580px;
   display: flex;
   flex-direction: column;
 }
@@ -170,6 +170,10 @@
 }
 
 @media (max-width: 768px) {
+  .contact {
+    padding: 4rem 0;
+  }
+  
   .contact-container {
     padding: 0 1rem;
   }
@@ -182,7 +186,8 @@
   .contact-form,
   .contact-info {
     padding: 2rem 1.5rem;
-    min-height: auto;
+    height: auto;
+    min-height: 500px;
   }
   
   .social-links {

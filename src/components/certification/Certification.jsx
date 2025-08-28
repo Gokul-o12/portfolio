@@ -15,7 +15,7 @@ export default function Certification() {
     <section className="certifications" id="certifications">
       <div className="certifications-container">
         <div className="section-header">
-          <h2 className="section-title center">Certifications</h2>
+          <h2 className="section-title">Certifications</h2>
           <p className="section-subtitle">
             Professional certifications that validate my expertise and commitment to continuous learning
           </p>

@@ -1,6 +1,6 @@
 .certifications {
   background: var(--light-gray);
-  padding: 6rem 0;
+  padding: 5rem 0;
 }
 
 .certifications-container {
@@ -30,11 +30,11 @@
 .certification-card {
   background: var(--card-background);
   border-radius: 16px;
-  padding: 3rem;
+  padding: 2.5rem;
   box-shadow: var(--shadow);
   text-align: center;
   border: 1px solid var(--border-color);
-  min-height: 500px;
+  height: 550px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -42,7 +42,7 @@
 
 .certification-image-container {
   width: 100%;
-  height: 300px;
+  height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,13 +121,17 @@
 }
 
 @media (max-width: 768px) {
+  .certifications {
+    padding: 4rem 0;
+  }
+  
   .certifications-container {
     padding: 0 1rem;
   }
   
   .certification-card {
     padding: 2rem 1.5rem;
-    min-height: 450px;
+    height: 480px;
   }
   
   .certification-image-container {
@@ -142,7 +146,7 @@
 @media (max-width: 480px) {
   .certification-card {
     padding: 1.5rem;
-    min-height: 400px;
+    height: 420px;
   }
   
   .certification-image-container {

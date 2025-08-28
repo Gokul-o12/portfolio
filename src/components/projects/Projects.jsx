@@ -27,7 +27,7 @@ export default function Projects() {
     <section className="projects" id="projects">
       <div className="projects-container">
         <div className="section-header">
-          <h2 className="section-title center">Featured Projects</h2>
+          <h2 className="section-title">Featured Projects</h2>
           <p className="section-subtitle">
             A showcase of my recent work and the technologies I've used to bring ideas to life
           </p>

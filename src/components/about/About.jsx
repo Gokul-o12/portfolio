@@ -5,9 +5,15 @@ const About = () => {
   return (
     <section className="about" id="about">
       <div className="about-container">
+        <div className="about-header">
+          <h2 className="section-title">About Me</h2>
+          <p className="section-subtitle">
+            Get to know more about my background, skills, and what drives me as a developer
+          </p>
+        </div>
+        
         <div className="about-grid">
           <div className="about-content">
-            <h2 className="section-title">About Me</h2>
             <p className="about-text">
               I'm a full-stack developer with a strong passion for building seamless, scalable web applications. 
               I enjoy crafting responsive user interfaces and architecting reliable backend systems that deliver real value.

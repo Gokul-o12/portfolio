@@ -109,30 +109,17 @@ p {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 1rem;
-  position: relative;
-  display: inline-block;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 60px;
-  height: 4px;
-  background: var(--primary-color);
-  border-radius: 2px;
-}
-
-.section-title.center {
-  display: block;
+  margin-bottom: 3rem;
   text-align: center;
 }
 
-.section-title.center::after {
-  left: 50%;
-  transform: translateX(-50%);
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 600px;
+  margin: -2rem auto 3rem auto;
+  line-height: 1.6;
 }
 
 /* Animations */

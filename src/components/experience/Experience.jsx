@@ -39,8 +39,8 @@ const Experience = () => {
         </div>
 
         <div className="education-section">
-          <div className="section-header">
-            <h3 className="section-title">Education</h3>
+          <div className="education-header">
+            <h3 className="education-title">Education</h3>
           </div>
           
           <div className="education-grid">

@@ -1,6 +1,6 @@
 .skills {
   background: var(--background);
-  padding: 6rem 0;
+  padding: 5rem 0;
 }
 
 .skills-container {
@@ -50,18 +50,20 @@
 
 .category-skills {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
 }
 
 .category-skill {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   border-radius: 12px;
   transition: var(--transition);
+  min-height: 120px;
 }
 
 .category-skill:hover {
@@ -72,9 +74,10 @@
 .category-skill-icon {
   width: 50px;
   height: 50px;
-  object-fit: contain;
+  object-fit: cover;
   margin-bottom: 1rem;
   transition: var(--transition);
+  border-radius: 8px;
 }
 
 .category-skill:hover .category-skill-icon {
@@ -82,13 +85,18 @@
 }
 
 .category-skill-name {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--text-secondary);
   text-align: center;
+  line-height: 1.3;
 }
 
 @media (max-width: 768px) {
+  .skills {
+    padding: 4rem 0;
+  }
+  
   .skills-container {
     padding: 0 1rem;
   }
@@ -103,8 +111,13 @@
   }
   
   .category-skills {
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+  }
+  
+  .category-skill {
+    padding: 1rem 0.5rem;
+    min-height: 100px;
   }
   
   .category-skill-icon {
@@ -115,6 +128,16 @@
 
 @media (max-width: 480px) {
   .category-skills {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
+  
+  .category-skill-icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .category-skill-name {
+    font-size: 0.85rem;
   }
 }
