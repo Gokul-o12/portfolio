@@ -5,6 +5,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [theme, setTheme] = useState('light');
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     // Check for saved theme preference or default to 'light'
@@ -17,6 +18,9 @@ export default function Header() {
     const handleScroll = () => {
       const sections = ['home', 'about', 'experience', 'projects', 'skills', 'certifications', 'contact'];
       const scrollPosition = window.scrollY + 100;
+      
+      // Add scrolled class for navbar effect
+      setIsScrolled(window.scrollY > 50);
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -49,23 +53,33 @@ export default function Header() {
     document.documentElement.setAttribute('data-theme', newTheme);
   };
 
+  const navItems = [
+    { id: 'home', label: 'home' },
+    { id: 'about', label: 'about' },
+    { id: 'experience', label: 'work' },
+    { id: 'projects', label: 'projects' },
+    { id: 'skills', label: 'skills' },
+    { id: 'certifications', label: 'certs' },
+    { id: 'contact', label: 'contact' }
+  ];
+
   return (
-    <header className="header">
+    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
         <a href="#home" className="logo" onClick={closeMenu}>
-          Gokul T
+          gokul.dev
         </a>
         
         <nav className={`nav ${isMenuOpen ? 'active' : ''}`}>
           <ul className="nav-list">
-            {['home', 'about', 'experience', 'projects', 'skills', 'certifications', 'contact'].map((section) => (
-              <li key={section}>
+            {navItems.map((item) => (
+              <li key={item.id}>
                 <a
-                  href={`#${section}`}
-                  className={`nav-link ${activeSection === section ? 'active' : ''}`}
+                  href={`#${item.id}`}
+                  className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
                   onClick={closeMenu}
                 >
-                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                  {item.label}
                 </a>
               </li>
             ))}
