@@ -1,16 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Certification.css';
 import certificates from './certificatesData';
 
 export default function Certification() {
-  const [current, setCurrent] = useState(0);
-
-  const next = () => setCurrent((prev) => (prev + 1) % certificates.length);
-  const prev = () => setCurrent((prev) => (prev - 1 + certificates.length) % certificates.length);
-  const goToSlide = (index) => setCurrent(index);
-
-  const { image, quote } = certificates[current];
-
   return (
     <section className="certifications" id="certifications">
       <div className="certifications-container">
@@ -21,36 +13,29 @@ export default function Certification() {
           </p>
         </div>
         
-        <div className="certification-slider">
-          <div className="certification-card">
-            <div className="certification-image-container">
-              <img 
-                src={image} 
-                alt="Certificate" 
-                className="certification-image"
-              />
-            </div>
-            <p className="certification-quote">"{quote}"</p>
-            
-            <div className="certification-controls">
-              <button className="control-btn" onClick={prev}>
-                <i className="fa-solid fa-chevron-left"></i>
-              </button>
-              <button className="control-btn" onClick={next}>
-                <i className="fa-solid fa-chevron-right"></i>
-              </button>
-            </div>
-            
-            <div className="certification-indicators">
-              {certificates.map((_, index) => (
-                <button
-                  key={index}
-                  className={`indicator ${index === current ? 'active' : ''}`}
-                  onClick={() => goToSlide(index)}
+        <div className="certifications-grid">
+          {certificates.map((cert, index) => (
+            <div key={index} className="certification-card">
+              <div className="certification-image-container">
+                <img 
+                  src={cert.image} 
+                  alt={cert.title}
+                  className="certification-image"
                 />
-              ))}
+                <div className="certification-overlay">
+                  <a href="#" className="view-certificate">
+                    View Certificate
+                  </a>
+                </div>
+              </div>
+              
+              <div className="certification-content">
+                <h3 className="certification-title">{cert.title}</h3>
+                <p className="certification-description">{cert.description}</p>
+                <span className="certification-provider">{cert.provider}</span>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

@@ -54,13 +54,13 @@ export default function Header() {
   };
 
   const navItems = [
-    { id: 'home', label: 'home' },
-    { id: 'about', label: 'about' },
-    { id: 'experience', label: 'work' },
-    { id: 'projects', label: 'projects' },
-    { id: 'skills', label: 'skills' },
-    { id: 'certifications', label: 'certs' },
-    { id: 'contact', label: 'contact' }
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'certifications', label: 'Certifications' },
+    { id: 'contact', label: 'Contact' }
   ];
 
   return (

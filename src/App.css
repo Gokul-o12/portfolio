@@ -99,20 +99,6 @@ p {
   border: 2px solid var(--primary-color);
 }
 
-.btn-outline:hover {
-  background: var(--primary-color);
-  color: var(--white);
-}
-
-/* Section titles with underline */
-.section-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 3rem;
-  text-align: center;
-}
-
 .section-subtitle {
   font-size: 1.1rem;
   color: var(--text-secondary);

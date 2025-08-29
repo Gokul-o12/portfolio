@@ -8,33 +8,39 @@ import cert6 from '../../assets/images/python Intern.jpg';
 const certificates = [
   {
     image: cert1,
-    quote: 'Implemented Excel automation to streamline workflows and enhance operational efficiency.',
-    // author: 'Rajeev Menon, Analyst'
+    title: 'Excel Automation & Advanced Functions',
+    description: 'Mastered Excel automation techniques, advanced formulas, and workflow optimization to enhance productivity and data management.',
+    provider: 'Microsoft'
   },
   {
     image: cert2,
-    quote: 'Trained to turn complex data into simple pictures that tell a story.',
-    author: 'Anjali Rao, Data Engineer'
+    title: 'Data Visualization & Analytics',
+    description: 'Learned to transform complex datasets into compelling visual stories using modern visualization tools and techniques.',
+    provider: 'Coursera'
   },
   {
     image: cert3,
-    quote: 'Learned the basics of C programming and built a strong foundation in coding logic.',
-    author: 'Mohit Kumar, Business Analyst'
+    title: 'C Programming Fundamentals',
+    description: 'Built a solid foundation in C programming, covering data structures, algorithms, and system-level programming concepts.',
+    provider: 'Programming Hub'
   },
   {
     image: cert4,
-    quote: 'Gained hands-on experience in Python programming, from simple scripts to real-world tasks.',
-    author: 'Anjali Rao, Data Engineer'
+    title: 'Python Development & Scripting',
+    description: 'Gained comprehensive Python skills for web development, automation, and data processing applications.',
+    provider: 'Python Institute'
   },
   {
     image: cert5,
-    quote: 'Understood the basics of cloud services and how to use them for storing and managing data online.',
-    author: 'Anjali Rao, Data Engineer'
+    title: 'Cloud Computing Essentials',
+    description: 'Understanding cloud architecture, deployment strategies, and modern cloud services for scalable applications.',
+    provider: 'AWS'
   },
   {
     image: cert6,
-    quote: 'Completed a Python development internship, applying skills to real-time projects and tasks.',
-    author: 'Anjali Rao, Data Engineer'
+    title: 'Python Development Internship',
+    description: 'Completed intensive Python internship program with hands-on experience in real-world project development.',
+    provider: 'Tech Company'
   }
 ];
 
