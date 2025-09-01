@@ -7,15 +7,17 @@ export default function Certification() {
     <section className="certifications" id="certifications">
       <div className="certifications-container">
         <div className="section-header">
-          <h2 className="section-title">Certifications</h2>
+          <h2 className="section-title">certifications</h2>
           <p className="section-subtitle">
-            Professional certifications that validate my expertise and commitment to continuous learning
+            professional certifications that validate my expertise and commitment to continuous learning
           </p>
         </div>
         
-        <div className="certifications-grid">
+        <div className="certifications-showcase">
           {certificates.map((cert, index) => (
             <div key={index} className="certification-card">
+              <div className="achievement-badge">verified</div>
+              
               <div className="certification-image-container">
                 <img 
                   src={cert.image} 
@@ -24,7 +26,8 @@ export default function Certification() {
                 />
                 <div className="certification-overlay">
                   <a href="#" className="view-certificate">
-                    View Certificate
+                    <span>🏆</span>
+                    view certificate
                   </a>
                 </div>
               </div>

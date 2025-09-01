@@ -1,13 +1,30 @@
-/* Modern Grid-Based Certifications */
+/* Gen Z Certifications Section - Completely New Design */
 .certifications {
-  background: var(--light-gray);
+  background: var(--bg-primary);
   padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.certifications::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 60% 40%, rgba(67, 233, 123, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, rgba(254, 225, 64, 0.1) 0%, transparent 50%);
+  z-index: 0;
 }
 
 .certifications-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .section-header {
@@ -15,43 +32,41 @@
   margin-bottom: 4rem;
 }
 
-.section-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-}
-
-.section-subtitle {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-.certifications-grid {
+/* Interactive Certification Showcase */
+.certifications-showcase {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
 }
 
 .certification-card {
-  background: var(--card-background);
-  border-radius: 20px;
+  background: var(--card-bg);
+  border-radius: 25px;
   overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-  border: 1px solid var(--border-color);
-  height: 400px;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 450px;
   display: flex;
   flex-direction: column;
+  border: 1px solid var(--border-color);
+  position: relative;
+  cursor: pointer;
+}
+
+.certification-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--success-gradient);
+  z-index: 1;
 }
 
 .certification-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-glow);
 }
 
 .certification-image-container {
@@ -59,18 +74,18 @@
   height: 250px;
   overflow: hidden;
   position: relative;
-  background: var(--light-gray);
+  background: var(--bg-tertiary);
 }
 
 .certification-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: var(--transition);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .certification-card:hover .certification-image {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .certification-overlay {
@@ -79,9 +94,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
   opacity: 0;
-  transition: var(--transition);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,23 +108,26 @@
 
 .view-certificate {
   background: white;
-  color: var(--primary-color);
-  padding: 0.8rem 1.5rem;
+  color: var(--text-primary);
+  padding: 1rem 2rem;
   border-radius: 25px;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
-  transition: var(--transition);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .view-certificate:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: scale(1.1);
+  box-shadow: var(--shadow-xl);
 }
 
 .certification-content {
-  padding: 1.5rem;
+  padding: 2rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -117,33 +135,54 @@
 }
 
 .certification-title {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
   line-height: 1.3;
 }
 
 .certification-description {
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.6;
   font-size: 0.95rem;
   flex-grow: 1;
+  margin-bottom: 1.5rem;
 }
 
 .certification-provider {
   font-size: 0.85rem;
-  color: var(--primary-color);
+  color: white;
   font-weight: 600;
-  margin-top: 1rem;
-  padding: 0.3rem 0.8rem;
-  background: rgba(102, 126, 234, 0.1);
-  border-radius: 15px;
+  padding: 0.5rem 1rem;
+  background: var(--success-gradient);
+  border-radius: 20px;
   display: inline-block;
   align-self: flex-start;
+  transition: all 0.3s ease;
 }
 
-/* Responsive Design */
+.certification-card:hover .certification-provider {
+  transform: scale(1.05);
+}
+
+/* Achievement Badges */
+.achievement-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--warning-gradient);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
   .certifications {
     padding: 4rem 0;
@@ -153,13 +192,13 @@
     padding: 0 1rem;
   }
   
-  .certifications-grid {
+  .certifications-showcase {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
   
   .certification-card {
-    height: 380px;
+    height: 420px;
   }
   
   .certification-image-container {
@@ -167,17 +206,21 @@
   }
   
   .certification-content {
-    padding: 1.2rem;
+    padding: 1.5rem;
+  }
+  
+  .certification-title {
+    font-size: 1.1rem;
+  }
+  
+  .certification-description {
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
-  .certifications-grid {
-    grid-template-columns: 1fr;
-  }
-  
   .certification-card {
-    height: 360px;
+    height: 400px;
   }
   
   .certification-image-container {
@@ -185,7 +228,7 @@
   }
   
   .certification-content {
-    padding: 1rem;
+    padding: 1.2rem;
   }
   
   .certification-title {
@@ -193,6 +236,6 @@
   }
   
   .certification-description {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 }

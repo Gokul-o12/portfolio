@@ -11,10 +11,7 @@ import './App.css';
 
 function App() {
   useEffect(() => {
-    // Add smooth scrolling behavior
     document.documentElement.style.scrollBehavior = 'smooth';
-    
-    // Add padding to body for fixed header
     document.body.style.paddingTop = '80px';
     
     return () => {

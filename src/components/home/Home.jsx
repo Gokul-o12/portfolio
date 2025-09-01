@@ -7,17 +7,23 @@ export default function Home() {
     <section className="hero" id="home">
       <div className="hero-container">
         <div className="hero-content">
-          <p className="hero-greeting">Hello! I am</p>
+          <p className="hero-greeting">hello! i am</p>
           <h1 className="hero-name">Gokul T</h1>
-          <h2 className="hero-title">Passionate Fullstack Developer</h2>
+          <h2 className="hero-title">passionate fullstack developer</h2>
           <p className="hero-description">
-            I'm a full-stack developer with a strong passion for building seamless, scalable web applications. 
-            I enjoy crafting responsive user interfaces and architecting reliable backend systems that deliver real value.
+            i'm a full-stack developer with a strong passion for building seamless, scalable web applications. 
+            i enjoy crafting responsive user interfaces and architecting reliable backend systems that deliver real value.
           </p>
           
           <div className="hero-actions">
-            <a href="#projects" className="btn">View My Work</a>
-            <a href="/Gokul.T Resume.pdf" download className="btn btn-outline">Download CV</a>
+            <a href="#projects" className="hero-btn">
+              <span>🚀</span>
+              view my work
+            </a>
+            <a href="/Gokul.T Resume.pdf" download className="hero-btn hero-btn-outline">
+              <span>📄</span>
+              download cv
+            </a>
           </div>
           
           <div className="social-links">

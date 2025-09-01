@@ -1,12 +1,30 @@
+/* Gen Z About Section */
 .about {
-  background: var(--light-gray);
-  padding: 5rem 0 5rem 0;
+  background: var(--bg-secondary);
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 70% 30%, rgba(240, 147, 251, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 30% 70%, rgba(79, 172, 254, 0.1) 0%, transparent 50%);
+  z-index: 0;
 }
 
 .about-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .about-header {
@@ -17,12 +35,12 @@
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 5rem;
   align-items: center;
 }
 
 .about-content {
-  animation: fadeInUp 0.8s ease-out;
+  animation: slideInUp 0.8s ease-out;
 }
 
 .about-text {
@@ -30,70 +48,122 @@
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 2rem;
+  text-align: left;
 }
 
 .about-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 3rem;
 }
 
 .stat-item {
   text-align: center;
-  padding: 1.5rem;
-  background: var(--card-background);
-  border-radius: 12px;
-  transition: var(--transition);
-  box-shadow: var(--shadow);
+  padding: 2rem 1.5rem;
+  background: var(--card-bg);
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-gradient);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 0;
+}
+
+.stat-item:hover::before {
+  left: 0;
+  opacity: 0.1;
 }
 
 .stat-item:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-glow);
 }
 
 .stat-number {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: var(--primary-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   display: block;
+  position: relative;
+  z-index: 1;
 }
 
 .stat-label {
   font-size: 0.9rem;
   color: var(--text-secondary);
   margin-top: 0.5rem;
+  font-weight: 500;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 1;
 }
 
 .about-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeIn 1s ease-out;
+  animation: fadeInScale 1s ease-out;
+  position: relative;
 }
 
 .about-photo {
   width: 100%;
   max-width: 400px;
   height: 400px;
-  border-radius: 20px;
-  box-shadow: var(--shadow-lg);
-  transition: var(--transition);
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 30px;
+  background: var(--primary-gradient);
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-size: 1.2rem;
   font-weight: 600;
+  box-shadow: var(--shadow-xl);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-photo::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+}
+
+.about-photo:hover::before {
+  animation: shimmer 1s ease-in-out;
 }
 
 .about-photo:hover {
-  transform: scale(1.02);
-  box-shadow: 0 25px 50px rgba(59, 130, 246, 0.15);
+  transform: scale(1.05) rotate(-2deg);
+  box-shadow: var(--shadow-glow);
 }
 
+/* Mobile Responsive */
 @media (max-width: 768px) {
   .about {
     padding: 4rem 0;
@@ -113,13 +183,33 @@
     order: -1;
   }
   
+  .about-text {
+    text-align: center;
+  }
+  
   .about-stats {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .stat-item {
+    padding: 1.5rem 1rem;
+  }
+  
+  .about-photo {
+    max-width: 300px;
+    height: 300px;
   }
 }
 
 @media (max-width: 480px) {
   .about-stats {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .about-photo {
+    max-width: 250px;
+    height: 250px;
   }
 }

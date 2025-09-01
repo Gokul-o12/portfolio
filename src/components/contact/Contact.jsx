@@ -6,9 +6,9 @@ export default function Contact() {
     <section className="contact" id="contact">
       <div className="contact-container">
         <div className="section-header">
-          <h2 className="section-title">Get In Touch</h2>
+          <h2 className="section-title">get in touch</h2>
           <p className="section-subtitle">
-            I'm open to work and ready for new opportunities. Feel free to reach out!
+            i'm open to work and ready for new opportunities. feel free to reach out!
           </p>
         </div>
 
@@ -18,52 +18,56 @@ export default function Contact() {
               <input type="hidden" name="access_key" value="1f9b0667-8788-422e-811d-70e34703512a" />
               
               <div className="form-group">
-                <label htmlFor="name" className="form-label">Name</label>
+                <label htmlFor="name" className="form-label">name</label>
                 <input
                   type="text"
                   id="name"
                   name="name"
                   className="form-input"
+                  placeholder="your awesome name"
                   required
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="email" className="form-label">Email</label>
+                <label htmlFor="email" className="form-label">email</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   className="form-input"
+                  placeholder="your@email.com"
                   required
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="message" className="form-label">Message</label>
+                <label htmlFor="message" className="form-label">message</label>
                 <textarea
                   id="message"
                   name="message"
                   className="form-textarea"
+                  placeholder="let's build something amazing together..."
                   required
                 ></textarea>
               </div>
 
               <button type="submit" className="submit-btn">
-                Send Message
+                <span>🚀</span>
+                send message
               </button>
             </form>
           </div>
 
           <div className="contact-info">
-            <h3>Contact Information</h3>
+            <h3>contact information</h3>
             
             <div className="contact-item">
               <div className="contact-icon">
                 <i className="fa-solid fa-phone"></i>
               </div>
               <div className="contact-details">
-                <h4>Phone</h4>
+                <h4>phone</h4>
                 <p>+91 63794 42739</p>
               </div>
             </div>
@@ -73,7 +77,7 @@ export default function Contact() {
                 <i className="fa-solid fa-envelope"></i>
               </div>
               <div className="contact-details">
-                <h4>Email</h4>
+                <h4>email</h4>
                 <p>amgokult@gmail.com</p>
               </div>
             </div>
@@ -83,8 +87,8 @@ export default function Contact() {
                 <i className="fa-solid fa-location-dot"></i>
               </div>
               <div className="contact-details">
-                <h4>Location</h4>
-                <p>Erode, Tamil Nadu, 638004</p>
+                <h4>location</h4>
+                <p>erode, tamil nadu, 638004</p>
               </div>
             </div>
 
