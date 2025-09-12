@@ -1,35 +1,23 @@
-import React, { useEffect } from 'react';
-import Header from './components/header/Header';
-import Home from './components/home/Home';
-import About from './components/about/About';
-import Experience from './components/experience/Experience';
-import Projects from './components/projects/Projects';
-import Skills from './components/skills/Skills';
-import Certification from './components/certification/Certification';
-import Contact from './components/contact/Contact';
+import React from 'react';
+import { motion } from 'framer-motion';
+import Hero from './components/Hero';
+import About from './components/About';
+import Skills from './components/Skills';
+import Experience from './components/Experience';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
 import './App.css';
 
 function App() {
-  useEffect(() => {
-    document.documentElement.style.scrollBehavior = 'smooth';
-    document.body.style.paddingTop = '80px';
-    
-    return () => {
-      document.body.style.paddingTop = '0';
-    };
-  }, []);
-
   return (
-    <>
-      <Header />
-      <Home />
+    <div className="bg-gray-900 text-white min-h-screen">
+      <Hero />
       <About />
+      <Skills />
       <Experience />
       <Projects />
-      <Skills />
-      <Certification />
       <Contact />
-    </>
+    </div>
   );
 }
 
