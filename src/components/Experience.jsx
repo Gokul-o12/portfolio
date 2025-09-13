@@ -60,16 +60,16 @@ const Experience = () => {
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-center mb-16"
+            className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900 dark:text-white"
           >
-            Experience & <span className="gradient-text">Education</span>
+            Experience & <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Education</span>
           </motion.h2>
           
           {/* Experience Section */}
           <div className="mb-16">
             <motion.h3 
               variants={itemVariants}
-              className="text-2xl font-semibold mb-8 gradient-text"
+              className="text-2xl font-semibold mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
             >
               Professional Experience
             </motion.h3>
@@ -78,18 +78,20 @@ const Experience = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="glass p-8 rounded-2xl mb-6 hover:bg-white/5 transition-all duration-300"
+                className="bg-white/10 dark:bg-white/5 backdrop-blur-md p-8 rounded-2xl mb-6 hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-300 border border-white/20"
               >
                 <div className="flex flex-col md:flex-row md:items-center gap-6 mb-6">
-                  <img 
-                    src={exp.logo} 
-                    alt={exp.company}
-                    className="w-16 h-16 rounded-xl object-cover"
-                  />
+                  <div className="w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
+                    <img 
+                      src={exp.logo} 
+                      alt={exp.company}
+                      className="w-full h-full rounded-xl object-contain bg-white p-2"
+                    />
+                  </div>
                   <div className="flex-1">
-                    <h4 className="text-xl font-semibold text-white mb-2">{exp.company}</h4>
-                    <p className="text-lg text-blue-400 mb-2">{exp.role}</p>
-                    <div className="flex flex-col sm:flex-row gap-4 text-gray-400">
+                    <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{exp.company}</h4>
+                    <p className="text-lg text-blue-600 dark:text-blue-400 mb-2">{exp.role}</p>
+                    <div className="flex flex-col sm:flex-row gap-4 text-gray-500 dark:text-gray-400">
                       <div className="flex items-center gap-2">
                         <Calendar size={16} />
                         <span>{exp.period}</span>
@@ -105,8 +107,8 @@ const Experience = () => {
                 <div className="space-y-3">
                   {exp.achievements.map((achievement, achIndex) => (
                     <div key={achIndex} className="flex items-start gap-3">
-                      <TrendingUp size={16} className="text-green-400 mt-1 flex-shrink-0" />
-                      <span className="text-gray-300">{achievement}</span>
+                      <TrendingUp size={16} className="text-green-500 mt-1 flex-shrink-0" />
+                      <span className="text-gray-600 dark:text-gray-300">{achievement}</span>
                     </div>
                   ))}
                 </div>
@@ -118,7 +120,7 @@ const Experience = () => {
           <div>
             <motion.h3 
               variants={itemVariants}
-              className="text-2xl font-semibold mb-8 gradient-text"
+              className="text-2xl font-semibold mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
             >
               Education
             </motion.h3>
@@ -128,13 +130,13 @@ const Experience = () => {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="glass p-6 rounded-2xl hover:bg-white/5 transition-all duration-300"
+                  className="bg-white/10 dark:bg-white/5 backdrop-blur-md p-6 rounded-2xl hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-300 border border-white/20"
                 >
-                  <h4 className="text-lg font-semibold text-white mb-2">{edu.degree}</h4>
-                  <p className="text-blue-400 mb-2">{edu.institution}</p>
+                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{edu.degree}</h4>
+                  <p className="text-blue-600 dark:text-blue-400 mb-2">{edu.institution}</p>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400">{edu.period}</span>
-                    <span className="text-green-400 font-medium">{edu.grade}</span>
+                    <span className="text-gray-500 dark:text-gray-400">{edu.period}</span>
+                    <span className="text-green-500 font-medium">{edu.grade}</span>
                   </div>
                 </motion.div>
               ))}
