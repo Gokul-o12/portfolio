@@ -1,13 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Download, MapPin, Coffee, Code } from 'lucide-react';
-import Lap from '../assets/images/lapbg.png';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden bg-gray-900 dark:bg-gray-900">
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20 dark:from-blue-900/30 dark:via-purple-900/30 dark:to-pink-900/30"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20"></div>
       
       {/* Floating Elements */}
       <div className="absolute top-20 left-10 w-20 h-20 bg-blue-500/10 rounded-full blur-xl animate-pulse"></div>
@@ -135,7 +134,7 @@ const Hero = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-2xl opacity-20 animate-pulse"></div>
             <img
-              src={Lap}
+              src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400"
               alt="Gokul T - Full Stack Developer"
               className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full object-cover border-4 border-gradient-to-r from-blue-500 to-purple-600 shadow-2xl hover:scale-105 transition-transform duration-300"
             />
