@@ -225,18 +225,6 @@ const Hero = () => {
               {/* Gradient Overlay */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-t from-blue-600/20 via-transparent to-purple-600/20"></div>
             </motion.div>
-            
-            {/* Professional Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1, duration: 0.5 }}
-              className="absolute bottom-4 right-4 bg-white dark:bg-gray-800 px-4 py-2 rounded-full shadow-lg border border-gray-200 dark:border-gray-700"
-            >
-              <span className="text-sm font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Available for Work
-              </span>
-            </motion.div>
           </div>
         </motion.div>
       </div>
