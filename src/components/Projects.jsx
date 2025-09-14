@@ -1,26 +1,59 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Zap } from 'lucide-react';
+import { ExternalLink, Github, Smartphone, Globe, Database } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
     {
+      id: 1,
       title: "Papex – AI-Powered Document Intelligence Platform",
-      description: "Designed and developed a platform that extracts structured data from documents using OCR and AI. Built a dynamic prompt system to convert raw text into JSON format. Delivered a complete solution with interactive dashboards and rule-based status tracking.",
-      tags: ["Spring Boot", "React", "PostgreSQL", "AI/ML", "OCR"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      github: "https://github.com/Gokul-o12",
-      live: "#",
-      featured: true
+      description: "Advanced platform that extracts structured data from documents using OCR and AI technology with dynamic prompt systems.",
+      type: "Web App",
+      icon: <Globe className="w-4 h-4" />,
+      keyFeatures: [
+        "OCR text extraction with AI processing",
+        "Dynamic prompt system for JSON conversion",
+        "Interactive dashboards with analytics",
+        "Rule-based status tracking system"
+      ],
+      technologies: ["Spring Boot", "React", "PostgreSQL", "AI/ML", "OCR"],
+      codeUrl: "https://github.com/Gokul-o12",
+      liveUrl: null,
+      image: "/src/assets/images/papex.png"
     },
     {
+      id: 2,
       title: "ATOM2 – Business Website",
-      description: "Developed a responsive multi-page business website with smooth navigation, scroll-based animations, and interactive UI components, optimized for performance and cross-device compatibility.",
-      tags: ["Bootstrap", "JavaScript", "HTML/CSS", "Responsive Design"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-      github: "https://github.com/Gokul-o12",
-      live: "#",
-      featured: false
+      description: "Responsive multi-page business website with smooth navigation, scroll-based animations, and interactive UI components.",
+      type: "Web App",
+      icon: <Globe className="w-4 h-4" />,
+      keyFeatures: [
+        "Responsive multi-page design",
+        "Smooth scroll-based animations",
+        "Interactive UI components",
+        "Cross-device compatibility optimization"
+      ],
+      technologies: ["Bootstrap", "JavaScript", "HTML/CSS", "Responsive Design"],
+      codeUrl: "https://github.com/Gokul-o12",
+      liveUrl: null,
+      image: "/src/assets/images/atom2.png"
+    },
+    {
+      id: 3,
+      title: "Portfolio Website",
+      description: "Modern, responsive portfolio website showcasing full-stack development skills with dark/light theme support.",
+      type: "Web App",
+      icon: <Globe className="w-4 h-4" />,
+      keyFeatures: [
+        "Modern responsive design",
+        "Dark/Light theme toggle",
+        "Smooth animations with Framer Motion",
+        "SEO optimized structure"
+      ],
+      technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
+      codeUrl: "https://github.com/Gokul-o12",
+      liveUrl: "#",
+      image: "/src/assets/images/Dashboard.png"
     }
   ];
 
@@ -34,88 +67,137 @@ const Projects = () => {
     }
   };
 
-  const itemVariants = {
+  const cardVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 }
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const getTypeColor = (type) => {
+    switch (type) {
+      case 'Mobile App':
+        return 'from-green-500 to-emerald-600';
+      case 'Web App':
+        return 'from-blue-500 to-purple-600';
+      case 'Database':
+        return 'from-orange-500 to-red-600';
+      default:
+        return 'from-blue-500 to-purple-600';
+    }
   };
 
   return (
-    <section id="projects" className="py-20 px-4 bg-white dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="py-20 px-4 bg-gray-50 dark:bg-gray-800/50">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <motion.h2 
-            variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-center mb-16"
-          >
-            Featured <span className="gradient-text">Projects</span>
-          </motion.h2>
-          
-          <div className="space-y-12">
-            {projects.map((project, index) => (
+          <motion.div variants={cardVariants} className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Featured Projects
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              A showcase of my recent work and the technologies I've used to bring ideas to life
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project) => (
               <motion.div
-                key={index}
-                variants={itemVariants}
-                className={`glass rounded-2xl overflow-hidden hover:bg-white/5 transition-all duration-300 ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                } flex flex-col md:flex`}
+                key={project.id}
+                variants={cardVariants}
+                whileHover={{ 
+                  y: -8,
+                  transition: { duration: 0.3 }
+                }}
+                className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 group"
               >
-                <div className="md:w-1/2 relative group">
+                {/* Type Badge */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-white text-sm font-medium bg-gradient-to-r ${getTypeColor(project.type)}`}>
+                    {project.icon}
+                    {project.type}
+                  </div>
+                </div>
+
+                {/* Project Image */}
+                <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 rounded-xl mb-4 overflow-hidden">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-64 md:h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  {project.featured && (
-                    <div className="absolute top-4 left-4 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
-                      <Zap size={14} />
-                      Featured
-                    </div>
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                
-                <div className="md:w-1/2 p-8 flex flex-col justify-center">
-                  <h3 className="text-2xl font-bold text-white mb-4">{project.title}</h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed">{project.description}</p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag, tagIndex) => (
-                      <span 
-                        key={tagIndex}
-                        className="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-500/30"
+
+                {/* Project Title */}
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2">
+                  {project.title}
+                </h3>
+
+                {/* Project Description */}
+                <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">
+                  {project.description}
+                </p>
+
+                {/* Key Features */}
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">Key Features:</h4>
+                  <ul className="space-y-1">
+                    {project.keyFeatures.map((feature, index) => (
+                      <li key={index} className="text-xs text-gray-600 dark:text-gray-300 flex items-start gap-2">
+                        <span className="w-1 h-1 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Technologies */}
+                <div className="mb-6">
+                  <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">Technologies:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, index) => (
+                      <span
+                        key={index}
+                        className="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs font-medium"
                       >
-                        {tag}
+                        {tech}
                       </span>
                     ))}
                   </div>
-                  
-                  <div className="flex gap-4">
-                    <a 
-                      href={project.github}
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex gap-3 mt-auto">
+                  <a
+                    href={project.codeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors text-sm font-medium"
+                  >
+                    <Github className="w-4 h-4" />
+                    Code
+                  </a>
+                  {project.liveUrl && project.liveUrl !== "#" && (
+                    <a
+                      href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-105"
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all text-sm font-medium"
                     >
-                      <Github size={18} />
-                      Code
+                      <ExternalLink className="w-4 h-4" />
+                      Live
                     </a>
-                    {project.live !== "#" && (
-                      <a 
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-6 py-3 btn-primary rounded-full transition-all duration-300 hover:scale-105"
-                      >
-                        <ExternalLink size={18} />
-                        Live Demo
-                      </a>
-                    )}
-                  </div>
+                  )}
                 </div>
               </motion.div>
             ))}

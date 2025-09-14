@@ -58,36 +58,36 @@ const About = () => {
                   <Code className="text-purple-500" size={24} />
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white">What I Love</h3>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex items-center gap-2">
-                    <Heart size={16} className="text-red-500" />
-                    <span className="text-gray-600 dark:text-gray-300">Problem Solving</span>
+                    <Heart size={16} className="text-red-500 flex-shrink-0" />
+                    <span className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">Problem Solving</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Heart size={16} className="text-red-500" />
-                    <span className="text-gray-600 dark:text-gray-300">Clean Code</span>
+                    <Heart size={16} className="text-red-500 flex-shrink-0" />
+                    <span className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">Clean Code</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Heart size={16} className="text-red-500" />
-                    <span className="text-gray-600 dark:text-gray-300">Learning</span>
+                    <Heart size={16} className="text-red-500 flex-shrink-0" />
+                    <span className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">Learning</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Coffee size={16} className="text-yellow-500" />
-                    <span className="text-gray-600 dark:text-gray-300">Coffee</span>
+                    <Coffee size={16} className="text-yellow-500 flex-shrink-0" />
+                    <span className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">Coffee</span>
                   </div>
                 </div>
               </div>
               
-              <div className="grid grid-cols-3 gap-4">
-                <div className="bg-white/10 dark:bg-white/5 backdrop-blur-md p-6 rounded-2xl text-center border border-white/20">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="bg-white/10 dark:bg-white/5 backdrop-blur-md p-4 sm:p-6 rounded-2xl text-center border border-white/20">
                   <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">1+</div>
                   <div className="text-gray-500 dark:text-gray-400 text-xs md:text-sm">Years Experience</div>
                 </div>
-                <div className="bg-white/10 dark:bg-white/5 backdrop-blur-md p-6 rounded-2xl text-center border border-white/20">
+                <div className="bg-white/10 dark:bg-white/5 backdrop-blur-md p-4 sm:p-6 rounded-2xl text-center border border-white/20">
                   <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">10+</div>
                   <div className="text-gray-500 dark:text-gray-400 text-xs md:text-sm">Projects</div>
                 </div>
-                <div className="bg-white/10 dark:bg-white/5 backdrop-blur-md p-6 rounded-2xl text-center border border-white/20">
+                <div className="bg-white/10 dark:bg-white/5 backdrop-blur-md p-4 sm:p-6 rounded-2xl text-center border border-white/20">
                   <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">6+</div>
                   <div className="text-gray-500 dark:text-gray-400 text-xs md:text-sm">Certifications</div>
                 </div>

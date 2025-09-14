@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -14,8 +13,11 @@ function App() {
   const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
+    // Get saved theme from localStorage or default to 'dark'
     const savedTheme = localStorage.getItem('theme') || 'dark';
     setTheme(savedTheme);
+    
+    // Apply theme to document
     if (savedTheme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
@@ -27,6 +29,8 @@ function App() {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
+    
+    // Apply theme to document
     if (newTheme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
