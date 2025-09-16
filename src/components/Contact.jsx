@@ -1,40 +1,66 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, ExternalLink } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Github,
+  Linkedin,
+  ExternalLink,
+} from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
+  const [result, setResult] = useState("");
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    setResult("Sending...");
+    const formDataToSend = new FormData();
+    formDataToSend.append("access_key", "1f9b0667-8788-422e-811d-70e34703512a");
+    formDataToSend.append("name", formData.name);
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("message", formData.message);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formDataToSend,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("✅ Form Submitted Successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      console.error("Error:", data);
+      setResult("❌ " + data.message);
+    }
   };
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
+      transition: { staggerChildren: 0.2 },
+    },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 }
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
@@ -46,24 +72,27 @@ const Contact = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <motion.h2 
+          <motion.h2
             variants={itemVariants}
             className="text-4xl md:text-5xl font-bold text-center mb-16"
           >
             Get In <span className="gradient-text">Touch</span>
           </motion.h2>
-          
+
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Info */}
             <motion.div variants={itemVariants} className="space-y-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-6 gradient-text">Let's Connect</h3>
+                <h3 className="text-2xl font-semibold mb-6 gradient-text">
+                  Let's Connect
+                </h3>
                 <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                  I'm always open to discussing new opportunities, interesting projects, 
-                  or just having a chat about technology. Feel free to reach out!
+                  I'm always open to discussing new opportunities, interesting
+                  projects, or just having a chat about technology. Feel free to
+                  reach out!
                 </p>
               </div>
-              
+
               <div className="space-y-6">
                 <div className="flex items-center gap-4 p-4 glass rounded-xl hover:bg-white/5 transition-all duration-300">
                   <Mail className="text-blue-400" size={24} />
@@ -72,7 +101,7 @@ const Contact = () => {
                     <p className="text-gray-300">amgokult@gmail.com</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-4 p-4 glass rounded-xl hover:bg-white/5 transition-all duration-300">
                   <Phone className="text-green-400" size={24} />
                   <div>
@@ -80,7 +109,7 @@ const Contact = () => {
                     <p className="text-gray-300">+91 63794 42739</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-4 p-4 glass rounded-xl hover:bg-white/5 transition-all duration-300">
                   <MapPin className="text-red-400" size={24} />
                   <div>
@@ -89,27 +118,27 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="flex gap-4 pt-6">
-                <a 
-                  href="https://github.com/Gokul-o12" 
-                  target="_blank" 
+                <a
+                  href="https://github.com/Gokul-o12"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 glass rounded-full hover:bg-white/10 transition-all duration-300 hover:scale-110"
                 >
                   <Github size={24} />
                 </a>
-                <a 
-                  href="https://www.linkedin.com/in/gokul-t-5286182a3" 
-                  target="_blank" 
+                <a
+                  href="https://www.linkedin.com/in/gokul-t-5286182a3"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 glass rounded-full hover:bg-white/10 transition-all duration-300 hover:scale-110"
                 >
                   <Linkedin size={24} />
                 </a>
-                <a 
-                  href="https://x.com/GokulTlukoG" 
-                  target="_blank" 
+                <a
+                  href="https://x.com/GokulTlukoG"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 glass rounded-full hover:bg-white/10 transition-all duration-300 hover:scale-110"
                 >
@@ -117,12 +146,18 @@ const Contact = () => {
                 </a>
               </div>
             </motion.div>
-            
+
             {/* Contact Form */}
             <motion.div variants={itemVariants}>
-              <form onSubmit={handleSubmit} className="glass p-8 rounded-2xl space-y-6">
+              <form
+                onSubmit={handleSubmit}
+                className="glass p-8 rounded-2xl space-y-6"
+              >
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-300 mb-2"
+                  >
                     Name
                   </label>
                   <input
@@ -136,9 +171,12 @@ const Contact = () => {
                     placeholder="Your name"
                   />
                 </div>
-                
+
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-300 mb-2"
+                  >
                     Email
                   </label>
                   <input
@@ -152,9 +190,12 @@ const Contact = () => {
                     placeholder="your@email.com"
                   />
                 </div>
-                
+
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-300 mb-2"
+                  >
                     Message
                   </label>
                   <textarea
@@ -168,7 +209,7 @@ const Contact = () => {
                     placeholder="Your message..."
                   />
                 </div>
-                
+
                 <button
                   type="submit"
                   className="w-full btn-primary py-4 rounded-xl font-semibold flex items-center justify-center gap-3 text-white hover:text-white transition-all duration-300"
@@ -177,6 +218,11 @@ const Contact = () => {
                   Send Message
                 </button>
               </form>
+
+              {/* Result message */}
+              {result && (
+                <p className="mt-4 text-center text-sm text-gray-300">{result}</p>
+              )}
             </motion.div>
           </div>
         </motion.div>

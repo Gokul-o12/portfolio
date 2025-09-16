@@ -108,7 +108,7 @@ const Hero = () => {
             </a>
             
             <a
-              href="/src/assets/resume/Gokul.T Resume.pdf"
+              href="/src/assets/resume/Gokul.T.pdf"
               download
               className="inline-flex items-center justify-center gap-2 border-2 border-blue-500 text-blue-600 dark:text-blue-400 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:bg-blue-500 hover:text-white transition-all duration-300 hover:scale-105 text-sm sm:text-base"
             >
@@ -125,7 +125,7 @@ const Hero = () => {
             className="flex gap-4"
           >
             <a
-              href="https://www.linkedin.com/in/gokul-t-5286182a3"
+              href="https://www.linkedin.com/in/gokul-t-5286182a3/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400 hover:bg-blue-500 hover:text-white transition-all duration-300 hover:scale-110"

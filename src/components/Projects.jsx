@@ -23,7 +23,7 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "ATOM2 – Business Website",
+      title: "ATOM2 – <br/> Business Website",
       description: "Responsive multi-page business website with smooth navigation, scroll-based animations, and interactive UI components.",
       type: "Web App",
       icon: <Globe className="w-4 h-4" />,
@@ -33,24 +33,24 @@ const Projects = () => {
         "Interactive UI components",
         "Cross-device compatibility optimization"
       ],
-      technologies: ["Bootstrap", "JavaScript", "HTML/CSS", "Responsive Design"],
+      technologies: ["Bootstrap", "JavaScript", "HTML/CSS"],
       codeUrl: "https://github.com/Gokul-o12",
       liveUrl: null,
       image: "/src/assets/images/atom2.png"
     },
     {
       id: 3,
-      title: "Portfolio Website",
-      description: "Modern, responsive portfolio website showcasing full-stack development skills with dark/light theme support.",
+      title: "Expense Tracker – Personal Expense Tracker App",
+      description: "Responsive application that tracks daily expenses using real-time charts and reports with interactive filters and insights.",
       type: "Web App",
       icon: <Globe className="w-4 h-4" />,
       keyFeatures: [
-        "Modern responsive design",
-        "Dark/Light theme toggle",
-        "Smooth animations with Framer Motion",
-        "SEO optimized structure"
+        "Responsive dashboard and entry screens",
+        "Smooth visual charts and transitions",
+        "Interactive filters, categories, and reports",
+        "Cross-device compatibility optimization"
       ],
-      technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
+      technologies: ["React", "Spring Boot", "MySQL"],
       codeUrl: "https://github.com/Gokul-o12",
       liveUrl: "#",
       image: "/src/assets/images/Dashboard.png"
