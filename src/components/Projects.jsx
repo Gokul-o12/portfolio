@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Smartphone, Globe, Database } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
@@ -8,8 +8,6 @@ const Projects = () => {
       id: 1,
       title: "Papex – AI-Powered Document Intelligence Platform",
       description: "Advanced platform that extracts structured data from documents using OCR and AI technology with dynamic prompt systems.",
-      type: "Web App",
-      icon: <Globe className="w-4 h-4" />,
       keyFeatures: [
         "OCR text extraction with AI processing",
         "Dynamic prompt system for JSON conversion",
@@ -18,15 +16,12 @@ const Projects = () => {
       ],
       technologies: ["Spring Boot", "React", "PostgreSQL", "AI/ML", "OCR"],
       codeUrl: "https://github.com/Gokul-o12",
-      liveUrl: null,
-      image: "/src/assets/images/papex.png"
+      liveUrl: null
     },
     {
       id: 2,
       title: "ATOM2 – <br/> Business Website",
       description: "Responsive multi-page business website with smooth navigation, scroll-based animations, and interactive UI components.",
-      type: "Web App",
-      icon: <Globe className="w-4 h-4" />,
       keyFeatures: [
         "Responsive multi-page design",
         "Smooth scroll-based animations",
@@ -35,15 +30,12 @@ const Projects = () => {
       ],
       technologies: ["Bootstrap", "JavaScript", "HTML/CSS"],
       codeUrl: "https://github.com/Gokul-o12",
-      liveUrl: null,
-      image: "/src/assets/images/atom2.png"
+      liveUrl: null
     },
     {
       id: 3,
       title: "Expense Tracker – Personal Expense Tracker App",
       description: "Responsive application that tracks daily expenses using real-time charts and reports with interactive filters and insights.",
-      type: "Web App",
-      icon: <Globe className="w-4 h-4" />,
       keyFeatures: [
         "Responsive dashboard and entry screens",
         "Smooth visual charts and transitions",
@@ -52,8 +44,7 @@ const Projects = () => {
       ],
       technologies: ["React", "Spring Boot", "MySQL"],
       codeUrl: "https://github.com/Gokul-o12",
-      liveUrl: "#",
-      image: "/src/assets/images/Dashboard.png"
+      liveUrl: "#"
     }
   ];
 
@@ -76,19 +67,6 @@ const Projects = () => {
         duration: 0.6,
         ease: "easeOut"
       }
-    }
-  };
-
-  const getTypeColor = (type) => {
-    switch (type) {
-      case 'Mobile App':
-        return 'from-green-500 to-emerald-600';
-      case 'Web App':
-        return 'from-blue-500 to-purple-600';
-      case 'Database':
-        return 'from-orange-500 to-red-600';
-      default:
-        return 'from-blue-500 to-purple-600';
     }
   };
 
@@ -119,37 +97,20 @@ const Projects = () => {
                   y: -8,
                   transition: { duration: 0.3 }
                 }}
-                className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 group"
+                className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 group flex flex-col h-full"
               >
-                {/* Type Badge */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-white text-sm font-medium bg-gradient-to-r ${getTypeColor(project.type)}`}>
-                    {project.icon}
-                    {project.type}
-                  </div>
-                </div>
-
-                {/* Project Image */}
-                <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 rounded-xl mb-4 overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-
                 {/* Project Title */}
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 line-clamp-2">
                   {project.title}
                 </h3>
 
                 {/* Project Description */}
-                <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 mb-6 text-sm leading-relaxed">
                   {project.description}
                 </p>
 
                 {/* Key Features */}
-                <div className="mb-4">
+                <div className="mb-6 flex-grow">
                   <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">Key Features:</h4>
                   <ul className="space-y-1">
                     {project.keyFeatures.map((feature, index) => (
