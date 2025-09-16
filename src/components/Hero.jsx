@@ -217,7 +217,7 @@ const Hero = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-2xl opacity-20 animate-pulse"></div>
               <img
-                src="/src/assets/images/Myimg.png"
+                src="https://res.cloudinary.com/dtt19zar3/image/upload/v1758024157/lap_sadnz1.jpg"
                 alt="Gokul T - Full Stack Developer"
                 className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full object-cover border-4 border-gradient-to-r from-blue-500 to-purple-600 shadow-2xl transition-transform duration-300"
               />

@@ -19,20 +19,21 @@ const Skills = () => {
       technologies: [
         { name: "Java", icon: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/4373217_java_logo_logos_icon_o6ll8s.png" },
         { name: "Spring Boot", icon: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526317/icons8-spring-boot-480_vucs9a.png" },
+        { name: "Node.js", icon: "https://res.cloudinary.com/dtt19zar3/image/upload/v1758024326/919825_xk1j80.png" },
+        { name: "MongoDB", icon: "https://res.cloudinary.com/dtt19zar3/image/upload/v1758024226/mongodb-logo-11609369386lqoc6r2ga9_cykbtl.png" },
         { name: "PostgreSQL", icon: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526317/icons8-postgresql-480_gp84jf.png" },
-        { name: "MySQL", icon: "https://res.cloudinary.com/dtt19zar3/image/upload/v1750247662/mysql_k3f98n.png" },
-        { name: "Node.js", icon: "https://res.cloudinary.com/dtt19zar3/image/upload/v1758019111/nodejs-1-logo-svg-vector_mzcojl.svg" },
-        { name: "MongoDB", icon: "https://res.cloudinary.com/dtt19zar3/image/upload/v1758019291/2560px-MongoDB_Logo.svg_ikuf8t.png" }
+        { name: "MySQL", icon: "https://res.cloudinary.com/dtt19zar3/image/upload/v1750247662/mysql_k3f98n.png" }
       ]
     },
     {
       category: "Tools & Others",
       technologies: [
         { name: "Git", icon: "https://res.cloudinary.com/dx5lg8mei/image/upload/v1744526105/2993773_git_social_media_icon_qlx8xs.png" },
+        { name: "GitHub", icon: "https://res.cloudinary.com/dtt19zar3/image/upload/v1758019039/bb0w3fvmfyk5vm2qjak9.png" },
         { name: "WordPress", icon: "https://res.cloudinary.com/dtt19zar3/image/upload/v1750246903/wordpress_ndh1ev.png" },
         { name: "Camunda", icon: "https://res.cloudinary.com/dtt19zar3/image/upload/v1751212781/camundas_jwizz8.png" },
-        { name: "Excel", icon: "https://res.cloudinary.com/dtt19zar3/image/upload/v1758019205/826px-Microsoft_Office_Excel__282019_E2_80_93present_29.svg_irjqeo.png" },
-        { name: "GitHub", icon: "https://res.cloudinary.com/dtt19zar3/image/upload/v1758019039/bb0w3fvmfyk5vm2qjak9.png" }
+        { name: "Excel", icon: "https://res.cloudinary.com/dtt19zar3/image/upload/v1758019205/826px-Microsoft_Office_Excel__282019_E2_80_93present_29.svg_irjqeo.png" }
+        
       ]
     }
   ];
