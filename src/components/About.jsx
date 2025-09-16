@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Heart, Code, Coffee } from 'lucide-react';
+import { Heart, Code } from 'lucide-react';
 
 const About = () => {
   const containerVariants = {

@@ -20,7 +20,7 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "ATOM2 – <br/> Business Website",
+      title: "ATOM2 – Business Website",
       description: "Responsive multi-page business website with smooth navigation, scroll-based animations, and interactive UI components.",
       keyFeatures: [
         "Responsive multi-page design",
