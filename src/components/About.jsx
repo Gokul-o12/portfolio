@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Code } from 'lucide-react';
+import { Heart, Code, Zap, Users, BookOpen, Palette } from 'lucide-react';
 
 const About = () => {
   const containerVariants = {
@@ -60,19 +60,19 @@ const About = () => {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex items-center gap-2">
-                    <Heart size={16} className="text-red-500 flex-shrink-0" />
+                    <Zap size={16} className="text-yellow-500 flex-shrink-0" />
                     <span className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">Problem Solving</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Heart size={16} className="text-red-500 flex-shrink-0" />
+                    <Users size={16} className="text-blue-500 flex-shrink-0" />
                     <span className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">Clean Code</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Heart size={16} className="text-red-500 flex-shrink-0" />
+                    <BookOpen size={16} className="text-green-500 flex-shrink-0" />
                     <span className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">Learning</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Coffee size={16} className="text-yellow-500 flex-shrink-0" />
+                    <Palette size={16} className="text-purple-500 flex-shrink-0" />
                     <span className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">Coffee</span>
                   </div>
                 </div>
